@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
+        
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+             
+            ]
           },
           "configurations": {
             "production": {
@@ -94,8 +97,21 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Sprint1:build:production",
+            "firebaseProject": "sprint2-bacchetta-labo4",
+            "firebaseHostingSite": "sprint2-bacchetta-labo4"
+          }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "dddfe2a4-7233-472c-99eb-cde896099ece"
   }
 }

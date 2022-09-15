@@ -1,0 +1,29 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+
+  <div *ngIf = '!this.logueado'>
+    <button type="button" class="btn btn-primary btn-lg1 text-center" (click) = "this.pruebaLogin1()">Ej login bien</button>
+		<button type="button" class="btn btn-primary btn-lg2" (click) = "this.pruebaLogin2()">Ej pass mal</button>
+		<button type="button" class="btn btn-primary btn-lg3" (click) = "this.pruebaLogin3()">Ej user mal</button>
+    <label class = "error" *ngIf = "this.errorCorreo">El usuario no existe</label>
+    <label class = "error" *ngIf = "this.errorClave">Clave inválida</label>
+    <input type ="text" placeholder = "Ingrese correo.." [(ngModel)] = "this.usuario.correo">
+  <input type ="text" placeholder = "Ingrese clave.." [(ngModel)] = "this.usuario.clave">
+  <button type="button"  (click) = "loguearse()">Login</button>
+  <button type="button"  routerLink="registro">Regístrese</button>
+  </div>
+  
+  <div *ngIf = 'this.logueado'>
+    <label>Logueado como {{this.usuario.correo}}</label>
+    <button type="button" class="btn btn-primary btn-lg" (click) = "this.desloguearse()">Salir</button>
+  </div>
+
+</body>
+</html>
